@@ -1,0 +1,4 @@
+# Starting compiling Unity.2D.IK.Runtime.dll
+/home/r00tkit/Unity/Hub/Editor/2020.3.30f1/Editor/Data/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-213e52349114221fda89885aa9d2656f
+# Starting compiling Unity.2D.IK.Editor.dll
+/home/r00tkit/Unity/Hub/Editor/2020.3.30f1/Editor/Data/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-13d770a91edcec9758974689e2da91fd
