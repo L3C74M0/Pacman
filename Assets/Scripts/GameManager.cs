@@ -13,6 +13,12 @@ public class GameManager : MonoBehaviour {
         NewGame();
     }
 
+    private void Update() {
+        if (this.lives <=0 && Input.anyKeyDown) {
+            NewGame();
+        }
+    }
+
     private void NewGame() {
         SetScore(0);
         SetLives(3);
@@ -26,7 +32,7 @@ public class GameManager : MonoBehaviour {
     }
 
     private void ResetState(){
-        for( int i = 0 ; this.ghosts.Length; i++) {
+        for( int i = 0 ; i < this.ghosts.Length; i++) {
             this.ghosts[i].gameObject.SetActive(true);
         }
 
@@ -34,7 +40,7 @@ public class GameManager : MonoBehaviour {
     }
 
     private void GameOver() {
-        for( int i = 0 ; this.ghosts.Length; i++) {
+        for( int i = 0 ; i < this.ghosts.Length; i++) {
             this.ghosts[i].gameObject.SetActive(false);
         }
 
