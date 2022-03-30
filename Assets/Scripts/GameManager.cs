@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
     public Ghost[] ghosts; 
@@ -14,7 +15,7 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Update() {
-        if (this.lives <=0 && Input.anyKeyDown) {
+        if (this.lives <=0 && Input.anyKey) {
             NewGame();
         }
     }
@@ -26,17 +27,19 @@ public class GameManager : MonoBehaviour {
     }
 
     private async void NewRound(){
-        foreach (Transform pellet in this.pellets ){
+        foreach (Transform pellet in pellets) {
             pellet.gameObject.SetActive(true);
         }
+
+        ResetState();
     }
 
     private void ResetState(){
-        for( int i = 0 ; i < this.ghosts.Length; i++) {
-            this.ghosts[i].gameObject.SetActive(true);
+        for( int i = 0 ; i < ghosts.Length; i++) {
+            ghosts[i].gameObject.SetActive(true);
         }
 
-        this.pacman.gameObject.SetActive(true);
+        pacman.gameObject.SetActive(true);
     }
 
     private void GameOver() {

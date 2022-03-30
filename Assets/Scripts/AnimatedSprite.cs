@@ -14,20 +14,22 @@ public class AnimatedSprite : MonoBehaviour {
     }
 
     private void Start() {
-        InvokeRepeating(nameof(Advance), this.animationTime, this.animationTime);
+        InvokeRepeating(nameof(Advance), animationTime, animationTime);
     }
 
     private void Advance() {
-        if(!this.spriteRenderer.enabled) {
+        if(!spriteRenderer.enabled) {
             return;
         }
-        this.animationFrame++;
-        if (animationFrame >= this.sprites.Length && this.loop) {
-            this.animationFrame = 0;
+
+        animationFrame++;
+        
+        if (animationFrame >= sprites.Length && loop) {
+            animationFrame = 0;
         }
 
-        if (this.animationFrame >=0 && this.animationFrame < this.sprites.Length) {
-            this.spriteRenderer.sprite = this.sprites[this.animationFrame];
+        if (animationFrame >= 0 && animationFrame < sprites.Length) {
+            spriteRenderer.sprite = sprites[animationFrame];
         }
     }
 
