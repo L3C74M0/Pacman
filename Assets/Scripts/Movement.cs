@@ -21,6 +21,7 @@ public class Movement : MonoBehaviour {
    }
 
    public void Start() {
+       rigidbody = GetComponent<Rigidbody2D>();
        ResetState();
    }
 
@@ -34,9 +35,12 @@ public class Movement : MonoBehaviour {
    }
 
    private void Update() {
+       FixedUpdated();
+       
+       /**
        if (nextDirection != Vector2.zero) {
            SetDirection(nextDirection);
-       }
+       }*/
    }
 
    public void FixedUpdated() {
