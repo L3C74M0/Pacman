@@ -8,11 +8,8 @@ public class Movement : MonoBehaviour {
    public LayerMask obstacleLayer;
 
    public new Rigidbody2D rigidbody { get; private set; }
-
    public Vector2 direction { get; private set; }
-
    public Vector2 nextDirection { get; private set; }
-
    public Vector3 startingPosition { get; private set; }
 
    private void Awake() {
@@ -21,13 +18,12 @@ public class Movement : MonoBehaviour {
    }
 
    public void Start() {
-       rigidbody = GetComponent<Rigidbody2D>();
        ResetState();
    }
 
    public void ResetState() {
        speedMultiplier = 1f;
-       direction = initialDirection;
+       this.direction = this.initialDirection;
        nextDirection = Vector2.zero;
        transform.position = this.startingPosition;
        rigidbody.isKinematic = false;
@@ -35,12 +31,10 @@ public class Movement : MonoBehaviour {
    }
 
    private void Update() {
-       FixedUpdated();
-       
-       /**
        if (nextDirection != Vector2.zero) {
            SetDirection(nextDirection);
-       }*/
+       }
+       other();
    }
 
    public void FixedUpdated() {
@@ -55,11 +49,18 @@ public class Movement : MonoBehaviour {
            nextDirection = Vector2.zero;
        } else { 
            nextDirection = direction;
+           this.direction = direction;
        }
    }
 
    public bool Occupied(Vector2 direction) {
        RaycastHit2D hit = Physics2D.BoxCast(transform.position, Vector2.one * 0.75f, 0f, direction, 1.5f, obstacleLayer);
         return hit.collider != null;
+   }
+
+   public void other () {
+       Vector2 position = this.rigidbody.position;
+       Vector2 translation = this.direction * speed * speedMultiplier * Time.fixedDeltaTime;
+       rigidbody.MovePosition(position + translation);
    }
 }
