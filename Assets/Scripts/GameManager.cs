@@ -41,10 +41,10 @@ public class GameManager : MonoBehaviour {
         ResetGhostMultiplayer();
 
         for( int i = 0 ; i < this.ghosts.Length; i++) {
-            this.ghosts[i].gameObject.SetActive(true);
+            this.ghosts[i].ResetState();
         }
 
-        pacman.gameObject.SetActive(true);
+        this.pacman.ResetState(); 
     }
 
     private void GameOver() {

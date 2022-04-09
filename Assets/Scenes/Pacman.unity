@@ -908,6 +908,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghost_Pinky
       objectReference: {fileID: 0}
+    - target: {fileID: 1498657055214017130, guid: e2cdee585412bd44da1d690cebbe285e, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1235655232}
     - target: {fileID: 1498657055214017134, guid: e2cdee585412bd44da1d690cebbe285e, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -952,6 +956,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6474942007809429453, guid: e2cdee585412bd44da1d690cebbe285e, type: 3}
+      propertyPath: duration
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2cdee585412bd44da1d690cebbe285e, type: 3}
 --- !u!1001 &108007365
@@ -961,9 +969,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 879002907514945008, guid: 49763dce863836145b01bd685881f149, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1235655232}
     - target: {fileID: 879002907514945012, guid: 49763dce863836145b01bd685881f149, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 879002907514945012, guid: 49763dce863836145b01bd685881f149, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1011,6 +1023,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49763dce863836145b01bd685881f149, type: 3}
+--- !u!114 &127670466 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1042285220721415827, guid: 553a31caffbb4774eaeac381ddf46a3c, type: 3}
+  m_PrefabInstance: {fileID: 1760058131}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcca6832bb543c381b660f26722419a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &208216719
 GameObject:
   m_ObjectHideFlags: 0
@@ -3721,6 +3744,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghost_Clyde
       objectReference: {fileID: 0}
+    - target: {fileID: 865324717128752137, guid: 09529100d66c4b64a92827e9e2915385, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1235655232}
     - target: {fileID: 865324717128752141, guid: 09529100d66c4b64a92827e9e2915385, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -3765,6 +3792,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4689815027077958062, guid: 09529100d66c4b64a92827e9e2915385, type: 3}
+      propertyPath: duration
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09529100d66c4b64a92827e9e2915385, type: 3}
 --- !u!1 &902220148
@@ -3796,7 +3827,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822fe2f2ca6dadf3cad866e7f6525678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghosts: []
+  ghosts:
+  - {fileID: 1114182105}
+  - {fileID: 127670466}
+  - {fileID: 2060855665}
+  - {fileID: 1039877340}
   pacman: {fileID: 1235655233}
   pellets: {fileID: 331792662}
 --- !u!4 &902220150
@@ -3843,6 +3878,28 @@ Transform:
   m_Father: {fileID: 1681767775}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1039877340 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 865324717128752137, guid: 09529100d66c4b64a92827e9e2915385, type: 3}
+  m_PrefabInstance: {fileID: 848681860}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcca6832bb543c381b660f26722419a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1114182105 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 879002907514945008, guid: 49763dce863836145b01bd685881f149, type: 3}
+  m_PrefabInstance: {fileID: 108007365}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcca6832bb543c381b660f26722419a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1235655229
 GameObject:
   m_ObjectHideFlags: 0
@@ -10061,9 +10118,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1042285220721415827, guid: 553a31caffbb4774eaeac381ddf46a3c, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1235655232}
     - target: {fileID: 1042285220721415831, guid: 553a31caffbb4774eaeac381ddf46a3c, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1042285220721415831, guid: 553a31caffbb4774eaeac381ddf46a3c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10108,6 +10169,22 @@ PrefabInstance:
     - target: {fileID: 1042285220721415837, guid: 553a31caffbb4774eaeac381ddf46a3c, type: 3}
       propertyPath: m_Name
       value: Ghost_Inky
+      objectReference: {fileID: 0}
+    - target: {fileID: 1722830224394060800, guid: 553a31caffbb4774eaeac381ddf46a3c, type: 3}
+      propertyPath: duration
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420302047409129127, guid: 553a31caffbb4774eaeac381ddf46a3c, type: 3}
+      propertyPath: duration
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4855198394650133300, guid: 553a31caffbb4774eaeac381ddf46a3c, type: 3}
+      propertyPath: duration
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7578808534009791635, guid: 553a31caffbb4774eaeac381ddf46a3c, type: 3}
+      propertyPath: duration
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 553a31caffbb4774eaeac381ddf46a3c, type: 3}
@@ -10228,3 +10305,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2060855665 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1498657055214017130, guid: e2cdee585412bd44da1d690cebbe285e, type: 3}
+  m_PrefabInstance: {fileID: 29520579}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcca6832bb543c381b660f26722419a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
