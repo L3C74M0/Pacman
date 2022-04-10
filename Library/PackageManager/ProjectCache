@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637851989149656460
+      ticks: 637852007888265683
     m_Hash: 1509228449
   m_LockFileStatus:
     m_FilePath: D:/Documents/GitHub/Pacman/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637851989149666440
+      ticks: 637852007888275714
     m_Hash: 992686758
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}

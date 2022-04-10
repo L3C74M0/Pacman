@@ -10,7 +10,7 @@ public abstract class GhostBehaviour : MonoBehaviour
     private void Awake()
     {
         this.ghost = GetComponent<Ghost>();
-        this.enabled = false;
+        // this.enabled = false;
     }
 
     public void Enable()

@@ -1,6 +1,9 @@
 using UnityEngine;
 
-public class Ghost : MonoBehaviour {
+public class Ghost : MonoBehaviour
+{
+
+
 
     public Movement movement { get; private set; }
 
@@ -17,11 +20,12 @@ public class Ghost : MonoBehaviour {
 
     public GhostBehaviour initialBehavior;
 
-    
+
     public int points = 200;
-    
+
     private void Awake()
     {
+
         this.movement = GetComponent<Movement>();
         this.home = GetComponent<GhostHome>();
         this.scatter = GetComponent<GhostScatter>();
@@ -38,17 +42,17 @@ public class Ghost : MonoBehaviour {
     {
         this.gameObject.SetActive(true);
         this.movement.ResetState();
-        
+
 
         this.frightened.Disable();
         this.chase.Disable();
         this.scatter.Enable();
-        
-        if(this.home != this.initialBehavior)
+
+        if (this.home != this.initialBehavior)
         {
             this.home.Disable();
         }
-        if(this.initialBehavior != null)
+        if (this.initialBehavior != null)
         {
             this.initialBehavior.Enable();
         }
@@ -56,15 +60,16 @@ public class Ghost : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Pacman"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Pacman"))
         {
             if (this.frightened.enabled)
             {
                 FindObjectOfType<GameManager>().GhostEaten(this);
 
-            }else
+            }
+            else
             {
-                FindObjectOfType<GameManager>().PacmanEaten(); 
+                FindObjectOfType<GameManager>().PacmanEaten();
             }
         }
     }
