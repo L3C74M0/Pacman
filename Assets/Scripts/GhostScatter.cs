@@ -20,7 +20,7 @@ public class GhostScatter : GhostBehaviour
 
             if (node.availableDirections[index] == -this.ghost.movement.direction && node.availableDirections.Count > 1)
             {
-                Debug.Log(true);
+               
                 index++;
 
                 if (index >= node.availableDirections.Count)
