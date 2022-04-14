@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
     public Ghost[] ghosts; 
@@ -52,7 +53,9 @@ public class GameManager : MonoBehaviour {
             this.ghosts[i].gameObject.SetActive(false);
         }
 
-        this.pacman.gameObject.SetActive(true);
+        FindObjectOfType<GeneralAudio>().Stop();
+        SceneManager.LoadScene("MainMenu");
+        //this.pacman.gameObject.SetActive(true);
     }
 
 
@@ -80,7 +83,6 @@ public class GameManager : MonoBehaviour {
         } else {
             GameOver();
         }
-
     }
 
     public void PelletEaten(Pellet pellet)    {
@@ -88,16 +90,14 @@ public class GameManager : MonoBehaviour {
 
         SetScore(this.score + pellet.points);
 
-        if (!HasRemainingPellets())
-        {
+        if (!HasRemainingPellets()) {
             this.pacman.gameObject.SetActive(false);
             Invoke(nameof(NewRound), 3.0f);
         }
     }
-    public void PowerPelletEaten (PowerPellet pellet)
-    {
-        for(int i=0; i<this.ghosts.Length; i++)
-        {
+
+    public void PowerPelletEaten (PowerPellet pellet) {
+        for(int i=0; i<this.ghosts.Length; i++) {
             this.ghosts[i].frightened.Enable(pellet.duration);
         }
 
@@ -108,19 +108,15 @@ public class GameManager : MonoBehaviour {
     }
 
     private bool HasRemainingPellets()    {
-        foreach (Transform pellet in this.pellets)
-        {
-            if (pellet.gameObject.activeSelf)
-            {
+        foreach (Transform pellet in this.pellets) {
+            if (pellet.gameObject.activeSelf) {
                 return true;
             }
-            
         }
         return false;
     }
 
-    private void ResetGhostMultiplayer()
-    {
+    private void ResetGhostMultiplayer() {
         this.ghostMultiplayer = 1;
     }
 }
