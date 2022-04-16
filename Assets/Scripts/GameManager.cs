@@ -103,7 +103,6 @@ public class GameManager : MonoBehaviour {
             highScores[2] = highScores[1];
             highScores[1] = highScores[0];
             highScores[0] = score;
-            Debug.LogError("Se guarda " + score + "En la posicion " + 0);
         } else if (score > (int) highScores[1]) {
             highScores[9] = highScores[8];
             highScores[8] = highScores[7];
@@ -114,7 +113,6 @@ public class GameManager : MonoBehaviour {
             highScores[3] = highScores[2];
             highScores[2] = highScores[1];
             highScores[1] = score;
-            Debug.LogError("Se guarda " + score + "En la posicion " + 1);
         } else if (score > (int) highScores[2]) {
             highScores[9] = highScores[8];
             highScores[8] = highScores[7];
@@ -124,7 +122,6 @@ public class GameManager : MonoBehaviour {
             highScores[4] = highScores[3];
             highScores[3] = highScores[2];
             highScores[2] = score;
-            Debug.LogError("Se guarda " + score + "En la posicion " + 2);
         } else if (score > (int) highScores[3]) {
             highScores[9] = highScores[8];
             highScores[8] = highScores[7];
@@ -133,7 +130,6 @@ public class GameManager : MonoBehaviour {
             highScores[5] = highScores[4];
             highScores[4] = highScores[3];
             highScores[3] = score;
-            Debug.LogError("Se guarda " + score + "En la posicion " + 3);
         } else if (score > (int) highScores[4]) {
             highScores[9] = highScores[8];
             highScores[8] = highScores[7];
@@ -141,32 +137,26 @@ public class GameManager : MonoBehaviour {
             highScores[6] = highScores[5];
             highScores[5] = highScores[4];
             highScores[4] = score;
-            Debug.LogError("Se guarda " + score + "En la posicion " + 4);
         } else if (score > (int) highScores[5]) {
             highScores[9] = highScores[8];
             highScores[8] = highScores[7];
             highScores[7] = highScores[6];
             highScores[6] = highScores[5];
             highScores[5] = score;
-            Debug.LogError("Se guarda " + score + "En la posicion " + 5);
         } else if (score > (int) highScores[6]) {
             highScores[9] = highScores[8];
             highScores[8] = highScores[7];
             highScores[7] = highScores[6];
             highScores[6] = score;
-            Debug.LogError("Se guarda " + score + "En la posicion " + 6);
         } else if (score > (int) highScores[7]) {
             highScores[9] = highScores[8];
             highScores[8] = highScores[7];
             highScores[7] = score;
-            Debug.LogError("Se guarda " + score + "En la posicion " + 7);
         } else if (score > (int) highScores[8]) {
             highScores[9] = highScores[8];
             highScores[8] = score;
-            Debug.LogError("Se guarda " + score + "En la posicion " + 8);
         } else if (score > (int) highScores[9]) {
             highScores[9] = score;
-            Debug.LogError("Se guarda " + score + "En la posicion " + 9);
         } else {
             Debug.LogError("NO Se guarda ");
         }
@@ -181,17 +171,6 @@ public class GameManager : MonoBehaviour {
         high.top8 = (int) highScores[7];
         high.top9 = (int) highScores[8];
         high.top10 = (int) highScores[9];
-
-        Debug.LogError("0 " + high.top1);
-        Debug.LogError("1 " + high.top2);
-        Debug.LogError("2 " + high.top3);
-        Debug.LogError("3 " + high.top4);
-        Debug.LogError("4 " + high.top5);
-        Debug.LogError("5 " + high.top6);
-        Debug.LogError("6 " + high.top7);
-        Debug.LogError("7 " + high.top8);
-        Debug.LogError("8 " + high.top9);
-        Debug.LogError("9 " + high.top10);
 
         LoadAndSaveData.SaveData(high, pathData, nameFile);
     }
