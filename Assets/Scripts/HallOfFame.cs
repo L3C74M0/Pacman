@@ -4,10 +4,12 @@ using System.Collections;
 
 public class HallOfFame : MonoBehaviour {
     public Text scores;
+    public Text nicks;
     public const string pathData = "SaveGames";
     public const string nameFile = "HighScores";
     public HighScores high;
     protected ArrayList highScores;
+    protected ArrayList names;
 
     private void Start() {
         updateScores();
@@ -28,9 +30,24 @@ public class HallOfFame : MonoBehaviour {
             highScores.Add(high.top8);
             highScores.Add(high.top9);
             highScores.Add(high.top10);
+
+            names = new ArrayList();
+            names.Add(high.str1);
+            names.Add(high.str2);
+            names.Add(high.str3);
+            names.Add(high.str4);
+            names.Add(high.str5);
+            names.Add(high.str6);
+            names.Add(high.str7);
+            names.Add(high.str8);
+            names.Add(high.str9);
+            names.Add(high.str10);
+
+            nicks.text = "";
             scores.text = "";
             for (int i = 0; i < highScores.Count; i++) {
                 scores.text += "" + (int) highScores[i] + "\n";
+                nicks.text += "" + (string) names[i] + "\n";
             }
         }
     }
