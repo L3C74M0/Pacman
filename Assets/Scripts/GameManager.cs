@@ -32,13 +32,38 @@ public class GameManager : MonoBehaviour {
     protected bool nullField = true;
     protected bool gameOver = false;
 
+    public Image up1;
+    public Image up2;
+    public Image up3;
+
     private void Start() {
         buttonOK.SetActive(false);
         inputDisable.SetActive(false);
+        up1.enabled = true;
+        up2.enabled = true;
+        up3.enabled = true;
         NewGame();
     }
 
     private void Update() {
+        if (lives == 3) {
+            up1.enabled = true;
+            up2.enabled = true;
+            up3.enabled = true;
+        } else if (lives == 2) {
+            up1.enabled = true;
+            up2.enabled = true;
+            up3.enabled = false;
+        } else if (lives == 1) {
+            up1.enabled = true;
+            up2.enabled = false;
+            up3.enabled = false;
+        } else if (lives == 0) {
+            up1.enabled = false;
+            up2.enabled = false;
+            up3.enabled = false;
+        }
+
         if (this.lives <=0 && Input.anyKey) {
             if (!gameOver) {
                 NewGame();
