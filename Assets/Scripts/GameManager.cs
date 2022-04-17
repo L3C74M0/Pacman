@@ -254,6 +254,7 @@ public class GameManager : MonoBehaviour {
         high.str9 = (string) names[8];
         high.str10 = (string) names[9];
 
+        //resertHighScores();
         LoadAndSaveData.SaveData(high, pathData, nameFile);
     }
 
@@ -379,7 +380,7 @@ public class GameManager : MonoBehaviour {
             highScores[9] = score;
             visibleButtons();
         } else {
-            Debug.LogError("NO Se guarda ");
+            SceneManager.LoadScene("MainMenu");
         }
     }
 
@@ -395,5 +396,29 @@ public class GameManager : MonoBehaviour {
         } else if (score > (int) highScores[8]) { names[8] = nickName;
         } else if (score > (int) highScores[9]) { names[9] = nickName;
         }
+    }
+
+    protected void resertHighScores() {
+        high.top1 = 0;
+        high.top2 = 0;
+        high.top3 = 0;
+        high.top4 = 0;
+        high.top5 = 0;
+        high.top6 = 0;
+        high.top7 = 0;
+        high.top8 = 0;
+        high.top9 = 0;
+        high.top10 = 0;
+
+        high.str1 = "NULL";
+        high.str2 = "NULL";
+        high.str3 = "NULL";
+        high.str4 = "NULL";
+        high.str5 = "NULL";
+        high.str6 = "NULL";
+        high.str7 = "NULL";
+        high.str8 = "NULL";
+        high.str9 = "NULL";
+        high.str10 = "NULL";
     }
 }
