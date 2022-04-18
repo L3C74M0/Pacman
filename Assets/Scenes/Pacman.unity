@@ -4980,9 +4980,9 @@ MonoBehaviour:
   inputName: {fileID: 631819927}
   buttonOK: {fileID: 505966103}
   inputDisable: {fileID: 941864419}
-  up1: {fileID: 0}
-  up2: {fileID: 0}
-  up3: {fileID: 0}
+  up1: {fileID: 414466568}
+  up2: {fileID: 1463075302}
+  up3: {fileID: 1816043976}
 --- !u!4 &902220150
 Transform:
   m_ObjectHideFlags: 0
