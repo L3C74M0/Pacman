@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour {
 
     protected bool nullField = true;
     protected bool gameOver = false;
+    protected int place = 0;
 
     public Image up1;
     public Image up2;
@@ -43,6 +44,8 @@ public class GameManager : MonoBehaviour {
         up2.enabled = true;
         up3.enabled = true;
         NewGame();
+        //save();
+        //GameOver();
     }
 
     private void Update() {
@@ -72,7 +75,7 @@ public class GameManager : MonoBehaviour {
         }
         currentScore.text = "" + score;
 
-        if (!nullField) {
+        if (!nullField && gameOver) {
             save();
         }
     }
@@ -144,8 +147,8 @@ public class GameManager : MonoBehaviour {
         }
 
         FindObjectOfType<GeneralAudio>().Stop();
-        gameOver = true;
         saveScores();
+        gameOver = true;
     }
 
     private void SetScore (int score) {
@@ -231,7 +234,9 @@ public class GameManager : MonoBehaviour {
     }
 
     protected void save() {
-        saveNicks();
+        //saveNicks();
+        names[place] = nickName;
+        
         high.top1 = (int) highScores[0];
         high.top2 = (int) highScores[1];
         high.top3 = (int) highScores[2];
@@ -254,7 +259,7 @@ public class GameManager : MonoBehaviour {
         high.str9 = (string) names[8];
         high.str10 = (string) names[9];
 
-        //resertHighScores();
+        //resetHighScores();
         LoadAndSaveData.SaveData(high, pathData, nameFile);
     }
 
@@ -279,6 +284,7 @@ public class GameManager : MonoBehaviour {
             highScores[1] = highScores[0];
             names[1] = names[0];
             highScores[0] = score;
+            place = 0 ;
             visibleButtons();
         } else if (score > (int) highScores[1]) {
             highScores[9] = highScores[8];
@@ -298,6 +304,7 @@ public class GameManager : MonoBehaviour {
             highScores[2] = highScores[1];
             names[2] = names[1];
             highScores[1] = score;
+            place = 1 ;
             visibleButtons();
         } else if (score > (int) highScores[2]) {
             highScores[9] = highScores[8];
@@ -315,6 +322,7 @@ public class GameManager : MonoBehaviour {
             highScores[3] = highScores[2];
             names[3] = names[2];
             highScores[2] = score;
+            place = 2 ;
             visibleButtons();
         } else if (score > (int) highScores[3]) {
             highScores[9] = highScores[8];
@@ -330,6 +338,7 @@ public class GameManager : MonoBehaviour {
             highScores[4] = highScores[3];
             names[4] = names[3];
             highScores[3] = score;
+            place = 3 ;
             visibleButtons();
         } else if (score > (int) highScores[4]) {
             highScores[9] = highScores[8];
@@ -343,6 +352,7 @@ public class GameManager : MonoBehaviour {
             highScores[5] = highScores[4];
             names[5] = names[4];
             highScores[4] = score;
+            place = 4 ;
             visibleButtons();
         } else if (score > (int) highScores[5]) {
             highScores[9] = highScores[8];
@@ -354,6 +364,7 @@ public class GameManager : MonoBehaviour {
             highScores[6] = highScores[5];
             names[6] = names[5];
             highScores[5] = score;
+            place = 5 ;
             visibleButtons();
         } else if (score > (int) highScores[6]) {
             highScores[9] = highScores[8];
@@ -363,6 +374,7 @@ public class GameManager : MonoBehaviour {
             highScores[7] = highScores[6];
             names[7] = names[6];
             highScores[6] = score;
+            place = 6 ;
             visibleButtons();
         } else if (score > (int) highScores[7]) {
             highScores[9] = highScores[8];
@@ -370,14 +382,17 @@ public class GameManager : MonoBehaviour {
             highScores[8] = highScores[7];
             names[8] = names[7];
             highScores[7] = score;
+            place = 7 ;
             visibleButtons();
         } else if (score > (int) highScores[8]) {
             highScores[9] = highScores[8];
             names[9] = names[8];
             highScores[8] = score;
+            place = 8 ;
             visibleButtons();
         } else if (score > (int) highScores[9]) {
             highScores[9] = score;
+            place = 9 ;
             visibleButtons();
         } else {
             SceneManager.LoadScene("MainMenu");
@@ -385,7 +400,7 @@ public class GameManager : MonoBehaviour {
     }
 
     protected void saveNicks() {
-        if (score > (int) highScores[0]) {names[0] = nickName;
+               if (score > (int) highScores[0]) { names[0] = nickName;
         } else if (score > (int) highScores[1]) { names[1] = nickName;
         } else if (score > (int) highScores[2]) { names[2] = nickName;
         } else if (score > (int) highScores[3]) { names[3] = nickName;
@@ -398,7 +413,7 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    protected void resertHighScores() {
+    protected void resetHighScores() {
         high.top1 = 0;
         high.top2 = 0;
         high.top3 = 0;
