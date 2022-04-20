@@ -73,6 +73,7 @@ public class GameManager : MonoBehaviour {
                 Debug.LogError("Inicia");
             }            
         }
+        
         currentScore.text = "" + score;
 
         if (!nullField && gameOver) {
